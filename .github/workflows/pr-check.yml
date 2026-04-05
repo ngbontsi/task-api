@@ -20,12 +20,3 @@ jobs:
 
       - name: Run Tests
         run: mvn test
-
-      - name: Check Code Coverage
-        run: mvn jacoco:report -q
-
-      - name: Upload Coverage
-        uses: codecov/codecov-action@v4
-        with:
-          files: target/site/jacoco/jacoco.xml
-        continue-on-error: true
