@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: task-api
+---
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: task-api-quota
+  namespace: task-api
+spec:
+  hard:
+    requests.memory: "1Gi"
+    limits.memory: "2Gi"
+    pods: "10"
